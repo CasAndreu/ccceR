@@ -8,7 +8,7 @@ Description: This is an R package that allow researchers
     at the University of Washington to analyze and study social
     media data.
 Depends:
-    R (>= 3.2.3)
+    R (>= 3.1)
 License: BSD_2_clause + file LICENSE
 LazyData: true
 RoxygenNote: 5.0.1.9000
