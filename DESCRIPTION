@@ -1,0 +1,14 @@
+Package: ccceR
+Title: Tools for analysis of social media data
+Version: 0.1
+Authors@R: person("Casas", "Andreu", email = "acasas2@uw.edu",
+    role = c("aut", "cre"))
+Description: This is an R package that allow researchers
+    of the Center for Communication and Civic Engagement (CCCE)
+    at the University of Washington to analyze and study social
+    media data.
+Depends:
+    R (>= 3.2.3)
+License: BSD_2_clause + file LICENSE
+LazyData: true
+RoxygenNote: 5.0.1.9000
