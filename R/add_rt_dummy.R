@@ -14,6 +14,7 @@
 add_rt_dummy <- function(dataset, var_text) {
   dataset$RT <- 0
   texts <- dataset[ , names(dataset) == var_text]
+  texts <- iconv(texts, "latin1", "ASCII", sub="")
   texts_start <- substring(text = texts, first = 1, last = 2)
   texts_rt <- texts_start == 'RT'
   dataset$RT[texts_rt] <- 1

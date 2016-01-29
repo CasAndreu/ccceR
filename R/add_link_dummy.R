@@ -14,6 +14,7 @@
 add_link_dummy <- function(dataset, var_text) {
   dataset$link_dummy <- 0
   texts <- dataset[ , names(dataset) == var_text]
+  texts <- iconv(texts, "latin1", "ASCII", sub="")
   texts_link <- grepl(pattern = "http", x = texts)
   dataset$link_dummy[texts_link] <- 1
   return(dataset)
