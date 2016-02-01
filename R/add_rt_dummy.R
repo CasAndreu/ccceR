@@ -8,8 +8,9 @@
 #'    variable in your dataset that conatins text messages.
 #' @keywords retweet
 #' @export
-#' @examples
+#' @examples  \dontrun{
 #' dataset_with_rt_dummy <- add_rt_dummy(orig_dataset, "Contents")
+#' }
 add_rt_dummy <- function(dataset, var_text) {
   dataset$RT <- 0
   texts <- dataset[ , names(dataset) == var_text]

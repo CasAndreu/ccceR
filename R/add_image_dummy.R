@@ -1,6 +1,8 @@
+#' @title 
 #' A function that adds a dummy variable to the dataset indicating which
 #'    messages contain links to images.
 #'
+#' @description
 #' This function takes the URLs in the tweets' text and it
 #'    indicates whether this contains a link to an image (==1) 
 #'    or not (==0).
@@ -10,9 +12,10 @@
 #'    urls in the text messages.
 #' @keywords image
 #' @export
-#' @examples
-#' dataset_with_image_dummy <- add_links_url(dataset, "links_full_url")
-#' 
+#' @examples \dontrun{
+#' dataset_with_image_dummy <- add_image_dummy(dataset, "links_full_url")
+#' }
+
 
 add_image_dummy <- function(dataset, var_full_url = "links_full_url") {
   if(!(var_full_url %in% names(dataset))) {

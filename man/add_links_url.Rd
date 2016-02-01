@@ -26,8 +26,9 @@ This function takes the text message in tweets and looks for urls
    "links_full_url" to the datset with the links to those urls.
 }
 \examples{
+ \dontrun{
 dataset_with_links_urls <- add_links_url(dataset, "Contents")
-
+}
 }
 \keyword{urls}
 

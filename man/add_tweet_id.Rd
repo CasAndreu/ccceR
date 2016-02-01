@@ -9,14 +9,16 @@ add_tweet_id(dataset, var_tweet_url)
 \arguments{
 \item{dataset}{The name of your dataset.}
 
-\item{url}{A string indicating the name of the variable with the 
+\item{var_tweet_url}{A string indicating the name of the variable with the 
 tweet URL.}
 }
 \description{
 This function allows you to add a variable with the tweet id.
 }
 \examples{
+ \dontrun{
 dataset_with_tweet_id <- add_link_dummy(dataset, "URL")
+}
 }
 \keyword{tweet_id}
 

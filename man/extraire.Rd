@@ -19,9 +19,9 @@ This function takes the output of the getURL() function
    http://www.r-bloggers.com/r-twitter-and-urls/
 }
 \examples{
+ \dontrun{
 res <- try(extraire(long_urls,"\\r\\nlocation: (.*?)\\r\\nserver"))
-
-
+}
 }
 \keyword{substring}
 

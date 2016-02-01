@@ -9,10 +9,10 @@
 #' @param motif The word that indicates where the long_url ends
 #' @keywords substring
 #' @export
-#' @examples
+#' @examples  \dontrun{
 #' res <- try(extraire(long_urls,"\r\nlocation: (.*?)\r\nserver"))
-#' 
-#' 
+#' }
+
 extraire <- function(entree,motif){
   res <- regexec(motif,entree)
   if(length(res[[1]])==2){

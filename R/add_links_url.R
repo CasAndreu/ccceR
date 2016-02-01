@@ -9,9 +9,9 @@
 #'    variable in your dataset that conatins text messages.
 #' @keywords urls
 #' @export
-#' @examples
+#' @examples  \dontrun{
 #' dataset_with_links_urls <- add_links_url(dataset, "Contents")
-#' 
+#' }
 
 add_links_url <- function(dataset, var_text) {
   texts <- dataset[ , names(dataset) == var_text]

@@ -18,7 +18,9 @@ This function allows you to add a dummy variable to
    If the message is a retweet, RT == 1.
 }
 \examples{
+ \dontrun{
 dataset_with_rt_dummy <- add_rt_dummy(orig_dataset, "Contents")
+}
 }
 \keyword{retweet}
 

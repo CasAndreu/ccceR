@@ -20,8 +20,9 @@ This function takes the URLs in the tweets' text and it
    or not (==0).
 }
 \examples{
-dataset_with_image_dummy <- add_links_url(dataset, "links_full_url")
-
+\dontrun{
+dataset_with_image_dummy <- add_image_dummy(dataset, "links_full_url")
+}
 }
 \keyword{image}
 

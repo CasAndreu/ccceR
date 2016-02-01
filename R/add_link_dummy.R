@@ -8,9 +8,9 @@
 #'    variable in your dataset that conatins text messages.
 #' @keywords links
 #' @export
-#' @examples
+#' @examples  \dontrun{
 #' dataset_with_link_dummy <- add_link_dummy(orig_dataset, "Contents")
-#' 
+#' }
 
 add_link_dummy <- function(dataset, var_text) {
   dataset$link_dummy <- 0

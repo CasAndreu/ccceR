@@ -18,8 +18,9 @@ This function allows you to add a dummy variable to
    If the message contains a link, link_dummy == 1.
 }
 \examples{
+ \dontrun{
 dataset_with_link_dummy <- add_link_dummy(orig_dataset, "Contents")
-
+}
 }
 \keyword{links}
 
