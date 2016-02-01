@@ -24,7 +24,7 @@ Read and pre-process the data in R
     colnames(raw_dataset) <- raw_dataset[1, ] # The name of the variables are in the first row
     dataset <- raw_dataset[2:nrow(raw_dataset), ] # Getting rid of the first row of the dataset
 
-## Functions
+## Functions:
 
 ###``add_rt_dummy()``
 This function adds a RT dummy variable into the dataset to indicate which messages are RTs. If the message is a retweet, ``RT`` == 1.
