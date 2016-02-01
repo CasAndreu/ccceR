@@ -7,10 +7,12 @@
 #' @param dataset The name of your dataset.
 #' @param var_text A string indicating the name of the 
 #'    variable in your dataset that conatins text messages.
-#' @keywords 
+#' @keywords urls
 #' @export
 #' @examples
 #' dataset_with_links_urls <- add_links_url(dataset, "Contents")
+#' 
+
 add_links_url <- function(dataset, var_text) {
   texts <- dataset[ , names(dataset) == var_text]
   url_pattern <- "http[s]?://(?:[a-zA-Z]|[0-9]|[$-_@.&+]|[!*\\(\\),]|(?:%[0-9a-fA-F][0-9a-fA-F]))+"

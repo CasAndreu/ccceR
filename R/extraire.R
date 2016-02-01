@@ -7,10 +7,11 @@
 #'    http://www.r-bloggers.com/r-twitter-and-urls/
 #' @param entree The word that indicates where the long_url starts
 #' @param motif The word that indicates where the long_url ends
-#' @keywords 
+#' @keywords substring
 #' @export
 #' @examples
 #' res <- try(extraire(long_urls,"\r\nlocation: (.*?)\r\nserver"))
+#' 
 #' 
 extraire <- function(entree,motif){
   res <- regexec(motif,entree)
