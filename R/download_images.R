@@ -29,9 +29,9 @@ download_images <- function(dataset, links_full_url, path) {
       next
     } else{
       result2 <- try(url_html <- read_html(url));
-      if(class(result2) == "try-error") next;
+      if(class(result2)[1] == "try-error") next;
       result2 <- try(image_link <- html_node(url_html, "div .AdaptiveMedia-photoContainer"));
-      if(class(result2) == "try-error") next;
+      if(class(result2)[1] == "try-error") next;
       image_str <- as.character(image_link)
       image_url <- extraire(image_str,'data-image-url=\"(.*?)\"')
       image_url_splitted <- strsplit(image_url, "/")
