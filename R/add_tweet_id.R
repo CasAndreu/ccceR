@@ -10,7 +10,7 @@
 #' dataset_with_tweet_id <- add_link_dummy(dataset, "URL")
 #' }
 add_tweet_id <- function(dataset, var_tweet_url) {
-  id_urls <- dataset[ , names(dataset) == var_tweet_url]
+  id_urls <- as.character(dataset[ , names(dataset) == var_tweet_url])
   id_urls_splitted <- strsplit(id_urls, "/")
   ids <- sapply(id_urls_splitted, function(x) x[[length(x)]])
   dataset$tweet_id <- ids

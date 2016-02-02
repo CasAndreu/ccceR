@@ -1,6 +1,8 @@
-#' A function adds 2 variables in the datset with the "shortened"
+#' @title 
+#'  A function adds 2 variables in the datset with the "shortened"
 #'    and "complete" links in the messages
-#'    
+#'  
+#' @description 
 #' This function takes the text message in tweets and looks for urls
 #'    in them. Then in creates 2 variables "links_short_url" and 
 #'    "links_full_url" to the datset with the links to those urls.
@@ -15,6 +17,7 @@
 
 add_links_url <- function(dataset, var_text) {
   texts <- dataset[ , names(dataset) == var_text]
+  texts <- iconv(texts, "latin1", "ASCII", sub="")
   url_pattern <- "http[s]?://(?:[a-zA-Z]|[0-9]|[$-_@.&+]|[!*\\(\\),]|(?:%[0-9a-fA-F][0-9a-fA-F]))+"
   urls_info <- gregexpr(url_pattern, texts)
   length_urls <- sapply(urls_info, function(x) attr(x, which = "match.length"))

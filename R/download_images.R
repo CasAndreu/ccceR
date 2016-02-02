@@ -3,7 +3,7 @@
 #' This function allows you to download images that are part
 #'    of a tweet and it also adds a new variable to the dataset
 #'    indicating the id of the image in that tweet or "" if the
-#'    tweet has no image 
+#'    tweet has no image.
 #' @param dataset The name of your dataset.
 #' @param links_full_url A string indicating the name of the 
 #'    variable in your dataset that conatins full links to the
