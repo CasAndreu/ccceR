@@ -40,7 +40,7 @@ This function adds a dummy variable to the dataset indicating which messages con
 ### ``add_tweet_id()``
 This function adds a variable to the datset with the tweet id (``tweet_id``).
 
-```new_dataset <- add_tweet_id(dataset, "URL")`
+```new_dataset <- add_tweet_id(dataset, "URL")```
 
 ### ``add_links_url()``
 This function adds 2 variables to the dataset with "shortened" (``links_short_url``) and "full" (``links_full_url``) URLs in the text messages.
