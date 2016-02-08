@@ -17,11 +17,11 @@
 #'    "path/to/a/directory")
 #' }
 download_images <- function(dataset, links_full_url, path) {
-  dataset$image_id <- NULL
   full_urls <- dataset[ , names(dataset) == links_full_url]
   urls <- sapply(full_urls, function(x)
     x[grepl(pattern = "/photo/", x = unlist(x))])
-  dataset$image_url <- urls
+  dataset$image_url <- ""
+  dataset$image_url[which(nchar(urls) > 12)] <- urls[which(nchar(urls) > 12)]
   all_ids <- NULL
   for (url in urls) {
     if (length(url) == 0) {
@@ -40,5 +40,6 @@ download_images <- function(dataset, links_full_url, path) {
       download.file(url = image_url, destfile = paste0(path, "/", image_id))
     }
   }
+  dataset$image_id <- all_ids
   return(dataset)
 }

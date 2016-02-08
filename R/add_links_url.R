@@ -31,15 +31,26 @@ add_links_url <- function(dataset, var_text) {
     if (ls[[1]] == "") {
       all_long <- c(all_long, "")
       next
-    }
-    long_raw <- sapply(ls, function(x) try(getURL(x, header=TRUE, nobody=TRUE, 
-        followlocation=FALSE,cainfo = system.file("CurlSSL", "cacert.pem", package = "RCurl"))))
+    } 
     long_urls_list <- NULL
-    for (url in long_raw) {
-      long_url <- try(extraire(url,"\r\nlocation: (.*?)\r\nserver"))
-      long_urls_list <- c(long_urls_list, long_url)
+    for (url in ls) {
+      if (nchar(url) < 16) {
+        long_urls_list <- c(long_urls_list, "incomplete")
+      } else {
+        long_raw <- sapply(url, function(x) try(getURL(x, header=TRUE, nobody=TRUE, 
+            followlocation=FALSE,cainfo = system.file("CurlSSL", "cacert.pem",
+                                                      package = "RCurl"))))
+        long_url <- try(extraire(long_raw,"\r\nlocation: (.*?)\r\nserver"))
+        if (nchar(long_url) < 30 & !is.na(long_url)) {
+          long_raw <- sapply(long_url, function(x) try(getURL(x, header=TRUE, nobody=TRUE, 
+                      followlocation=FALSE,cainfo = system.file("CurlSSL", "cacert.pem",
+                      package = "RCurl"))))
+          long_url <- try(extraire(tolower(long_raw),"\r\nlocation: (.*?)\r"))
+        }
+        long_urls_list <- c(long_urls_list, long_url)
+      }
     }
-    all_long[[length(all_long)+1]] <- c(long_urls_list)
+    all_long[length(all_long)+1] <- list(long_urls_list)
   }
   dataset$links_full_url <- all_long
   print("2 new variables have been added to the dataset: 'links_short_url' & 'links_full_url'")
