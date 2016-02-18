@@ -15,8 +15,6 @@
 #' @examples \dontrun{
 #' dataset_with_image_dummy <- add_image_dummy(dataset, "links_full_url")
 #' }
-
-
 add_image_dummy <- function(dataset, var_full_url = "links_full_url") {
   if(!(var_full_url %in% names(dataset))) {
     print(paste(var_full_url, "not in the dataset!"))
@@ -24,7 +22,7 @@ add_image_dummy <- function(dataset, var_full_url = "links_full_url") {
   }
   urls <- dataset[ , names(dataset) == var_full_url]
   urls_image_boolean <- sapply(urls, function(x) 
-              grep(pattern = "/photo", x = x))
+              grep(pattern = "/photo/", x = x))
   image_dummy <- sapply(urls_image_boolean, function(x) 
                   length(x) > 0 )
   dataset$image_dummy <- 0

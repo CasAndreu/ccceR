@@ -23,15 +23,19 @@ download_images <- function(dataset, links_full_url, path) {
   dataset$image_url <- ""
   dataset$image_url[which(nchar(urls) > 12)] <- urls[which(nchar(urls) > 12)]
   all_ids <- NULL
-  for (url in urls) {
+  for (i in 1:length(urls)) {
+    url <- unlist(urls[i])
     if (length(url) == 0) {
       all_ids <- c(all_ids, "")
       next
-    } else{
+    } else {
       result2 <- try(url_html <- read_html(url));
       if(class(result2)[1] == "try-error") next;
       result2 <- try(image_link <- html_node(url_html, "div .AdaptiveMedia-photoContainer"));
-      if(class(result2)[1] == "try-error") next;
+      if(class(result2)[1] == "try-error") {
+        all_ids <- c(all_ids, "")
+        next
+      }
       image_str <- as.character(image_link)
       image_url <- extraire(image_str,'data-image-url=\"(.*?)\"')
       image_url_splitted <- strsplit(image_url, "/")
