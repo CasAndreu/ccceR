@@ -52,7 +52,7 @@ This function adds a dummy variable to the dataset (``image_dummy``) indicating 
 
 ```new_dataset <- add_image_dummy(dataset, "links_full_url")```
 
-### ``download.images()``
+### ``download_images()``
 This function downloads images in tweets to a directory given by the user, and it also adds a variable to the dataset indicating the id of the tweet images.
 
 ```new_dataset_with_image_id <- download_images(dataset, "links_full_url", "path/to/a/directory")```
