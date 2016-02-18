@@ -52,7 +52,15 @@ This function adds a dummy variable to the dataset (``image_dummy``) indicating 
 
 ```new_dataset <- add_image_dummy(dataset, "links_full_url")```
 
-### ``download.images()``
+### ``download_images()``
 This function downloads images in tweets to a directory given by the user, and it also adds a variable to the dataset indicating the id of the tweet images.
 
-```new_dataset_with_image_vars <- download_images(dataset, "links_full_url", "path/to/a/directory")```
+```new_dataset_with_image_id <- download_images(dataset, "links_full_url", "path/to/a/directory")```
+
+### ``as_data_frame()``
+This funciton transforms all variables of a dataset into character variables so datasets with list variables can be written out inot a CSV file.
+
+``` 
+new_dataset <- as_data_frame(dataset)
+write.csv(new_dataset, "new_dataset.csv", row.names = FALSE) 
+```
