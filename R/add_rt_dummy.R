@@ -1,3 +1,4 @@
+#' @title
 #' A function to add a RT dummy variable.
 #'
 #' This function allows you to add a dummy variable to 
